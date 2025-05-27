@@ -19,8 +19,8 @@ const educationData = [
   {
     degree: "Bachelor of Technology in Computer Science and Engineering",
     institution: "Techno Main Salt Lake",
-    duration: "August 2024 - Present",
-    gpa: "8.6 (Current)",
+    duration: "August 2020 - 2022",
+    gpa: "75%",
     description:
       "Focused on advanced computer science subjects, AI, machine learning, and systems design.",
     highlights: [
@@ -30,14 +30,14 @@ const educationData = [
   },
   {
     degree: "Bachelor of Technology in Computer Science and Engineering",
-    institution: "Techno Main Salt Lake",
-    duration: "August 2024 - Present",
-    gpa: "8.6 (Current)",
+    institution: "GIET University",
+    duration: "sep 2022 - Present",
+    gpa: "6.30 (Current)",
     description:
-      "Focused on advanced computer science subjects, AI, machine learning, and systems design.",
+      "Focused on full-stack web development, modern frameworks, and scalable system design.",
     highlights: [
-      "Built a machine learning model for traffic prediction",
-      "Active member of the AI & Robotics club",
+      "Developed a full-stack web application using MERN stack",
+      "Active member of the webEye👁️ club",
     ],
   },
 ];

@@ -43,34 +43,6 @@ const projectsData = [
     github: "https://github.com/user/video-streaming-app",
     demo: "https://video-streaming-demo.com",
   },
-  {
-    title: "Contest Tracker",
-    description:
-      "MERN-based app to track, filter, and bookmark coding contests with solution links and dark mode support.",
-    tech: [
-      { name: "MongoDB", image: "/icons/mongodb.svg" },
-      { name: "Express", image: "/icons/express.svg" },
-      { name: "React", image: "/icons/react.svg" },
-      { name: "Node.js", image: "/icons/nodejs.svg" },
-    ],
-    image: "/images/contest-tracker.png",
-    github: "https://github.com/user/contest-tracker",
-    demo: "https://contest-tracker-demo.com",
-  },
-  {
-    title: "Customer Engagement Dashboard",
-    description:
-      "Real-time analytics dashboard with engagement tracking, retention insights, and dynamic filtering.",
-    tech: [
-      { name: "MongoDB", image: "/icons/mongodb.svg" },
-      { name: "Express", image: "/icons/express.svg" },
-      { name: "React", image: "/icons/react.svg" },
-      { name: "Node.js", image: "/icons/nodejs.svg" },
-    ],
-    image: "/images/engagement-dashboard.png",
-    github: "https://github.com/user/engagement-dashboard",
-    demo: "https://engagement-dashboard-demo.com",
-  },
   
 ];
 

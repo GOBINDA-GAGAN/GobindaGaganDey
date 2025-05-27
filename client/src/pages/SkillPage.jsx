@@ -82,7 +82,7 @@ export default function SkillsSection() {
           {filteredSkills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="bg-[#dcd8d8] p-6 rounded-2xl w-28 h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center text-4xl shadow-md hover:scale-110 transition-transform"
+              className="bg-[#1a1a1a] p-6 rounded-2xl w-28 h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center text-4xl shadow-md hover:scale-110 transition-transform"
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}

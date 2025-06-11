@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-white py-20 px-6 text-center">
+    <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-white md:py-20 py-10 px-6 text-center">
       <h3 className="text-xl text-orange-400 mb-2">
         Hi, I'm Gobinda Gagan Dey
       </h3>

@@ -83,7 +83,7 @@ const AboutMe = () => {
         <ProfessionalExcellence />
       </div>
       <div className="w-10/12 flex justify-center items-center">
-        <ExperienceSection />
+        {/* <ExperienceSection /> */}
       </div>
       <div className="w-10/12 flex justify-center items-center">
        <EducationJourney/>

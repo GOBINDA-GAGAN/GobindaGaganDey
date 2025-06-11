@@ -19,23 +19,75 @@ import {
 } from "react-icons/si";
 
 const skills = [
-  { name: "JavaScript", icon: <SiJavascript />, type: "Frontend" },
-  { name: "React", icon: <SiReact />, type: "Frontend" },
-  { name: "Next.js", icon: <SiNextdotjs />, type: "Frontend" },
-  { name: "Redux", icon: <SiRedux />, type: "Frontend" },
+  {
+    name: "JavaScript",
+    icon: <SiJavascript className="text-yellow-400" />,
+    type: "Frontend",
+  },
+  {
+    name: "React",
+    icon: <SiReact className="text-blue-400" />,
+    type: "Frontend",
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs className="text-whites dark:text-white" />,
+    type: "Frontend",
+  },
+  {
+    name: "Redux",
+    icon: <SiRedux className="text-purple-500" />,
+    type: "Frontend",
+  },
 
-  { name: "Node.js", icon: <SiNodedotjs />, type: "Backend" },
-  { name: "Express.js", icon: <SiExpress />, type: "Backend" },
-  { name: "MongoDB", icon: <SiMongodb />, type: "Backend" },
+  {
+    name: "Node.js",
+    icon: <SiNodedotjs className="text-green-600" />,
+    type: "Backend",
+  },
+  {
+    name: "Express.js",
+    icon: <SiExpress className="text-gray-100 dark:text-white" />,
+    type: "Backend",
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb className="text-green-500" />,
+    type: "Backend",
+  },
 
-  { name: "TailwindCSS", icon: <SiTailwindcss />, type: "Tools" },
-  { name: "Git", icon: <SiGit />, type: "Tools" },
-  { name: "GitHub", icon: <SiGithub />, type: "Tools" },
-  { name: "Docker", icon: <SiDocker />, type: "Tools" },
-  { name: "Firebase", icon: <SiFirebase />, type: "Tools" },
-  { name: "Vercel", icon: <SiVercel />, type: "Tools" },
-  { name: "Postman", icon: <SiPostman />, type: "Tools" },
-  { name: "Figma", icon: <SiFigma />, type: "Tools" },
+  {
+    name: "TailwindCSS",
+    icon: <SiTailwindcss className="text-cyan-400" />,
+    type: "Tools",
+  },
+  { name: "Git", icon: <SiGit className="text-orange-500" />, type: "Tools" },
+  {
+    name: "GitHub",
+    icon: <SiGithub className="text-gray-100 dark:text-white" />,
+    type: "Tools",
+  },
+  {
+    name: "Docker",
+    icon: <SiDocker className="text-blue-500" />,
+    type: "Tools",
+  },
+  {
+    name: "Firebase",
+    icon: <SiFirebase className="text-yellow-500" />,
+    type: "Tools",
+  },
+  {
+    name: "Vercel",
+    icon: <SiVercel className="text-black dark:text-white" />,
+    type: "Tools",
+  },
+  {
+    name: "Postman",
+    icon: <SiPostman className="text-orange-500" />,
+    type: "Tools",
+  },
+  { name: "Figma", icon: <SiFigma className="text-pink-500" />, type: "Tools" },
 ];
 
 const categories = ["All", "Frontend", "Backend", "Tools"];
@@ -76,13 +128,13 @@ export default function SkillsSection() {
       {/* Skills Grid */}
       <motion.div
         layout
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center"
+        className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center"
       >
         <AnimatePresence>
           {filteredSkills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="bg-[#1a1a1a] p-6 rounded-2xl w-28 h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center text-4xl shadow-md hover:scale-110 transition-transform"
+              className="bg-[#1a1a1a] md:p-6 p-2 rounded-2xl w-20 h-20 md:w-28 md:h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center text-4xl shadow-md hover:scale-110 transition-transform"
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}

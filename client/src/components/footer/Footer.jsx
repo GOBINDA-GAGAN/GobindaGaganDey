@@ -1,6 +1,37 @@
 import React from "react";
-import { FaFacebookF, FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaGithub,
+  FaTwitter,
+  FaLinkedin,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa";
 import { Link } from "react-scroll";
+
+const socialLinks = [
+  {
+    icon: <FaLinkedin size={25} className="text-blue-700" />,
+    href: "https://www.linkedin.com/in/gobinda-gagan-dey/",
+  }, // LinkedIn Blue
+  {
+    icon: <FaGithub size={25} className="text-gray-100" />,
+    href: "https://github.com/GOBINDA-GAGAN",
+  }, // GitHub Dark Gray
+  {
+    icon: <FaTwitter size={25} className="text-blue-400" />,
+    href: "https://x.com/_GobindaGagan_",
+  }, // Twitter Blue
+  {
+    icon: <FaYoutube size={25} className="text-red-600" />,
+    href: "https://www.youtube.com/@GobindaGaganVlog",
+  },
+  {
+    icon: <FaInstagram className="text-pink-500" />,
+    href: "#insta",
+  },
+];
 
 const Footer = () => {
   return (
@@ -62,18 +93,11 @@ const Footer = () => {
             Follow Me
           </h2>
           <div className="flex justify-center md:justify-start gap-4 text-2xl">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <FaFacebookF />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              <FaLinkedinIn />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
-              <FaGithub />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
-              <FaTwitter />
-            </a>
+            {socialLinks.map((link, index) => (
+              <a key={index} href={link.href} target="_blank" rel="noreferrer">
+                {link.icon}
+              </a>
+            ))}
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ const projectsData = [
   {
     title: "My Portfolio",
     description:
-      "A modern, fast, and animated developer portfolio built with React (Vite), Tailwind CSS, and Framer Motion. Showcases projects, skills, and a contact form with smooth transitions and responsive design.",
+      "Interactive, animated, responsive portfolio showcasing projects and skills using React, Tailwind CSS, and Framer Motion.",
     tech: [
       {
         name: "React (Vite)",
@@ -94,7 +94,7 @@ export default function MyProjects() {
           className={`px-3 py-2 border rounded-full ${
             filter === "top3"
               ? "bg-orange-500 text-black shadow-lg"
-              : "bg-[#806b6b] border-gray-700 text-white hover:bg-gray-800"
+              : "bg-[#806b6b] text-white hover:bg-gray-800"
           }`}
         >
           Top 3
@@ -103,8 +103,8 @@ export default function MyProjects() {
           onClick={() => setFilter("all")}
           className={`px-4 py-2 border rounded-full hover:bg-[#141D2D] ${
             filter === "all"
-              ? "bg-orange-500 text-black shadow-lg"
-              : "bg-[#806b6b] border-gray-700 text-white hover:bg-gray-800"
+              ? "bg-orange-500 text-white shadow-lg"
+              : "bg-[#806b6b]  text-white hover:bg-gray-800"
           }`}
         >
           All
@@ -112,7 +112,7 @@ export default function MyProjects() {
       </div>
 
       {/* Project Grid */}
-      <div className="md:w-10/12 w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-end">
+      <div className="md:w-10/12 w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 place-items-end">
         {filteredProjects.map((project, idx) => (
           <div
             key={idx}

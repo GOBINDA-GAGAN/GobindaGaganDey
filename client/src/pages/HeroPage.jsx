@@ -7,19 +7,36 @@ import {
   FaComment,
   FaShare,
   FaBookmark,
-  FaFacebook,
+  FaYoutube,
   FaLinkedin,
   FaGithub,
   FaTwitter,
+  FaInstagram,
 } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const socialLinks = [
-  { icon: <FaFacebook />, href: "https://facebook.com" },
-  { icon: <FaLinkedin />, href: "https://linkedin.com" },
-  { icon: <FaGithub />, href: "https://github.com" },
-  { icon: <FaTwitter />, href: "https://twitter.com" },
+  {
+    icon: <FaLinkedin size={25} className="text-blue-700" />,
+    href: "https://www.linkedin.com/in/gobinda-gagan-dey/",
+  }, // LinkedIn Blue
+  {
+    icon: <FaGithub size={25} className="text-gray-100" />,
+    href: "https://github.com/GOBINDA-GAGAN",
+  }, // GitHub Dark Gray
+  {
+    icon: <FaTwitter size={25} className="text-blue-400" />,
+    href: "https://x.com/_GobindaGagan_",
+  }, // Twitter Blue
+  {
+    icon: <FaYoutube size={25} className="text-red-600" />,
+    href: "https://www.youtube.com/@GobindaGagan",
+  },
+  {
+    icon: <FaInstagram className="text-pink-500" />,
+    href: "https://www.instagram.com/_technocoderx_/",
+  }, // YouTube Red
 ];
 
 export default function HomePage() {
@@ -97,8 +114,8 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          I'm a passionate Full Stack Developer creating fast, intuitive, and responsive web applications.
-          Let's build something impactful together.
+          I'm a passionate Full Stack Developer creating fast, intuitive, and
+          responsive web applications. Let's build something impactful together.
         </motion.p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">

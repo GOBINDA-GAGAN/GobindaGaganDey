@@ -18,17 +18,21 @@ const Contact = () => {
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-10">
         {/* Email */}
-        <div
-          className="bg-[#111827] p-6 rounded-xl shadow-md w-72 transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30"
-          style={{
-            boxShadow:
-              "inset 0 0 10px rgba(255,165,0,0.3), 0 0 30px rgba(255,165,0,0.3)",
-          }}
-        >
-          <FiMail className="text-orange-400 text-4xl mx-auto mb-4" />
-          <h2 className="text-xl font-bold mb-1">Email</h2>
-          <p className="text-gray-300 break-words">gobindagagandey@gmail.com</p>
-        </div>
+        <a href="mailto:gobindagagandey@gmail.com">
+          <div
+            className="bg-[#111827] p-6 rounded-xl shadow-md w-72 transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30"
+            style={{
+              boxShadow:
+                "inset 0 0 10px rgba(255,165,0,0.3), 0 0 30px rgba(255,165,0,0.3)",
+            }}
+          >
+            <FiMail className="text-orange-400 text-4xl mx-auto mb-4" />
+            <h2 className="text-xl font-bold mb-1">Email</h2>
+            <p className="text-gray-300 break-words">
+              gobindagagandey@gmail.com
+            </p>
+          </div>
+        </a>
 
         {/* LinkedIn */}
         <a

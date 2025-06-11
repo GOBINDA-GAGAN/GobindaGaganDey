@@ -29,7 +29,7 @@ const projectsData = [
       },
     ],
     image: project1Photo,
-    github: "https://github.com/user/crypto-tracker",
+    github: "https://github.com/GOBINDA-GAGAN/CryptoDashboard",
     demo: "https://crypto-dashboard-gold-delta.vercel.app/",
   },
 ];

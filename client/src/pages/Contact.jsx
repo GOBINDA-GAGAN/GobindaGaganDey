@@ -64,7 +64,7 @@ const Contact = () => {
           >
             <FaGithub className="text-orange-400 text-4xl mx-auto mb-4" />
             <h2 className="text-xl font-bold mb-1">GitHub</h2>
-            <p className="text-gray-300">@GOBINDA_GAGAN</p>
+            <p className="text-gray-300">@GOBINDA-GAGAN</p>
           </div>
         </a>
       </div>

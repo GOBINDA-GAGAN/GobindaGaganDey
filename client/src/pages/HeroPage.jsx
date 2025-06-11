@@ -147,7 +147,7 @@ export default function HomePage() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-orange-400 text-2xl hover:text-black transition-colors p-1.5 md:p-1 bg-gray-100 rounded-xl border border-gray-200 shadow-md ${item.shadowColor}`}
+                className={`text-orange-400 text-2xl hover:text-black transition-colors p-1.5 md:p-1 bg-gray-100 rounded-xl border border-gray-200 shadow-lg ${item.shadowColor}`}
                 whileHover={{ scale: 1.3, rotate: 15 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}

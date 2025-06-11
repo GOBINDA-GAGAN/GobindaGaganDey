@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import MyInterests from "../components/AboutCard/MyInterests";
 import ProfessionalExcellence from "../components/AboutCard/ProfessionalValues";
-import ExperienceSection from "../components/card/ExperienceSection";
+// import ExperienceSection from "../components/card/ExperienceSection";
 import EducationJourney from "../components/card/Eduction";
 
 const AboutMe = () => {
@@ -25,7 +25,7 @@ const AboutMe = () => {
 
   return (
     <motion.div
-      className="min-h-screen bg-gradient-to-br flex flex-col justify-center items-center from-gray-800 via-gray-900 to-gray-800 text-white px-4 sm:px-6 md:px-16 py-16"
+      className="min-h-screen bg-gradient-to-br flex flex-col justify-center items-center from-gray-800 via-gray-900 to-gray-800 text-white px-1  md:px-16 py-10"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -86,7 +86,7 @@ const AboutMe = () => {
         {/* <ExperienceSection /> */}
       </div>
       <div className="w-10/12 flex justify-center items-center">
-       <EducationJourney/>
+        <EducationJourney />
       </div>
     </motion.div>
   );

@@ -4,7 +4,7 @@ import { professionalValues } from "../../assets/professionalValues.js";
 
 const ProfessionalExcellence = () => {
   return (
-    <div className=" text-white py-16 px-4 sm:px-6 md:px-20">
+    <div className=" text-white py-16 px-1s sm:px-6 md:px-20">
       <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-orange-400 mb-12">
         Professional Excellence
       </h2>

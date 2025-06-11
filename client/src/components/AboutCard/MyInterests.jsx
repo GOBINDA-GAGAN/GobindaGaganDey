@@ -61,7 +61,7 @@ const MyInterests = () => {
   };
 
   return (
-    <div className="px-6 py-8  text-white rounded-lg max-w-full">
+    <div className="md:px-6 md:py-8 px-2 py-4  text-white rounded-lg max-w-full">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold tracking-wide">I Like It</h2>
         <ArrowRight className="w-5 h-5" />

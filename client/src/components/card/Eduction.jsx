@@ -5,27 +5,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const educationData = [
   {
-    degree: "Diploma in Computer Science and Technology",
-    institution: "Siliguri Govt Polytechnic",
-    duration: "June 2021 - July 2024",
-    gpa: "8.0",
+    degree: "Higher Secondary (12th Grade) - Science",
+    institution: "NIST Higher Secondary School",
+    duration: "Completed in 2022", // adjust year if needed
+    gpa: "73%",
     description:
-      "Comprehensive coursework in programming, data structures, and software development.",
+      "Focused on Physics, Chemistry, Mathematics, and Computer Science.",
     highlights: [
-      "Completed final year project on web development",
-      "Participated in coding and tech events",
-    ],
-  },
-  {
-    degree: "Bachelor of Technology in Computer Science and Engineering",
-    institution: "Techno Main Salt Lake",
-    duration: "August 2020 - 2022",
-    gpa: "75%",
-    description:
-      "Focused on advanced computer science subjects, AI, machine learning, and systems design.",
-    highlights: [
-      "Built a machine learning model for traffic prediction",
-      "Active member of the AI & Robotics club",
+      "Maintained consistent academic performance",
+      "Attended district-level coding workshops",
     ],
   },
   {

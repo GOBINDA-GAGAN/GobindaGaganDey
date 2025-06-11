@@ -37,7 +37,7 @@ const Navbar = () => {
                 to={link.to}
                 smooth={true}
                 duration={500}
-                offset={-70} // Adjust based on navbar height
+                offset={-70} 
                 className="cursor-pointer hover:text-white transition"
               >
                 {link.name}
@@ -47,9 +47,11 @@ const Navbar = () => {
         </ul>
 
         {/* Hire me button */}
-        <button className="hidden md:block border border-orange-500 text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-600  transition hover:text-amber-50">
-          Hire me !
-        </button>
+      <a href="mailto:gobindagagandey@gmail.com">
+            <button className="border hidden md:blocks border-orange-500 cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
+              <span className="cursor-pointer"> Hire me 😊</span>
+            </button>
+          </a>
 
         {/* Mobile menu toggle */}
         <div className="md:hidden">
@@ -89,7 +91,7 @@ const Navbar = () => {
           ))}
           <a href="mailto:gobindagagandey@gmail.com">
             <button className="border border-orange-500 cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
-              Hire me !
+              <span className="cursor-pointer"> Hire me 😊</span>
             </button>
           </a>
         </ul>

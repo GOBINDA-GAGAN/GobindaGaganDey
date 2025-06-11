@@ -161,7 +161,7 @@ export default function HomePage() {
 
       {/* RIGHT CARD SECTION */}
       <motion.div
-        className="relative w-full max-w-[25rem] bg-white rounded-lg overflow-hidden shadow-xl mt-14 text-black rotate-0 md:rotate-[5.5deg]"
+        className=" w-full max-w-[25rem] bg-gray-200 rounded-lg overflow-hidden shadow-xl mt-14 text-black rotate-0 md:rotate-[5.5deg]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
@@ -173,9 +173,9 @@ export default function HomePage() {
             <img
               src="/mee2.jpg"
               alt="profile"
-              className="w-6 h-6 rounded-full object-cover"
+              className="w-8 h-8 rounded-full object-cover"
             />
-            <span className="text-sm font-semibold">@gobinda gagan</span>
+            <span className="text-sm font-semibold">@gobinda_gagan_</span>
           </div>
           <button className="text-blue-500 text-xs font-bold border px-2 py-1 rounded">
             FOLLOW
@@ -186,8 +186,7 @@ export default function HomePage() {
         <motion.img
           src="/mee2.jpg"
           alt="Instagram post"
-          className="w-full h-full object-cover"
-          whileHover={{ scale: 1.05 }}
+          className="w-full h-[80%] object-left-top"
           transition={{ duration: 0.3 }}
         />
 

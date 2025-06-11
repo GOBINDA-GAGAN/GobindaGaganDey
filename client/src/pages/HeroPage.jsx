@@ -35,7 +35,7 @@ const socialLinks = [
   },
   {
     icon: <FaInstagram className="text-pink-500" />,
-    href: "https://www.instagram.com/_technocoderx_/",
+    href: "https://www.instagram.com/gobinda_gagan_/",
   }, // YouTube Red
 ];
 

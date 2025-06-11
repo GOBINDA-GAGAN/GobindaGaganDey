@@ -29,7 +29,7 @@ const socialLinks = [
   },
   {
     icon: <FaInstagram className="text-pink-500" />,
-    href: "#insta",
+    href: "https://www.instagram.com/gobinda_gagan_/",
   },
 ];
 

@@ -87,9 +87,11 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-          <button className="border border-orange-500 text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
-            Hire me !
-          </button>
+          <a href="mailto:gobindagagandey@gmail.com">
+            <button className="border border-orange-500 cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
+              Hire me !
+            </button>
+          </a>
         </ul>
       </div>
     </nav>

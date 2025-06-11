@@ -119,13 +119,15 @@ export default function HomePage() {
         </motion.p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <motion.button
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold shadow-lg transition duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Download CV
-          </motion.button>
+          <a href="mailto:gobindagagandey@gmail.com">
+            <motion.button
+              className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold shadow-lg transition duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Hire me!
+            </motion.button>
+          </a>
 
           <div className="flex space-x-4 mt-2 sm:mt-0">
             {socialLinks.map((item, index) => (

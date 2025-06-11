@@ -1,70 +1,86 @@
 import React, { useState, useEffect } from "react";
+import project1Photo from "../assets/image/project-1_image.png";
+import { FaReact } from "react-icons/fa";
+import { SiTailwindcss, SiJavascript, SiChartdotjs } from "react-icons/si";
+import { MdApi } from "react-icons/md";
 
 const projectsData = [
   {
-    title: "Contest Tracker",
+    title: "CryptoTracker",
     description:
-      "MERN-based app to track, filter, and bookmark coding contests with solution links and dark mode support.",
+      "A responsive React app that fetches real-time cryptocurrency data using public APIs. Includes price charts with Chart.js, dark mode, search functionality, and responsive design — all built using React, Tailwind CSS, and Chart.js.",
     tech: [
-      { name: "MongoDB", image: "/icons/mongodb.svg" },
-      { name: "Express", image: "/icons/express.svg" },
-      { name: "React", image: "/icons/react.svg" },
-      { name: "Node.js", image: "/icons/nodejs.svg" },
+      { name: "React", icon: <FaReact size={20} className="text-blue-400" /> },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss size={20} className="text-cyan-400" />,
+      },
+      {
+        name: "JavaScript",
+        icon: <SiJavascript size={20} className="text-yellow-400" />,
+      },
+      {
+        name: "Chart.js",
+        icon: <SiChartdotjs size={20} className="text-pink-500" />,
+      },
+      {
+        name: "REST API",
+        icon: <MdApi size={20} className="text-green-400" />,
+      },
     ],
-    image: "/images/contest-tracker.png",
-    github: "https://github.com/user/contest-tracker",
-    demo: "https://contest-tracker-demo.com",
+    image: project1Photo,
+    github: "https://github.com/user/crypto-tracker",
+    demo: "https://crypto-dashboard-gold-delta.vercel.app/",
   },
-  {
-    title: "Customer Engagement Dashboard",
-    description:
-      "Real-time analytics dashboard with engagement tracking, retention insights, and dynamic filtering.",
-    tech: [
-      { name: "MongoDB", image: "/icons/mongodb.svg" },
-      { name: "Express", image: "/icons/express.svg" },
-      { name: "React", image: "/icons/react.svg" },
-      { name: "Node.js", image: "/icons/nodejs.svg" },
-    ],
-    image: "/images/engagement-dashboard.png",
-    github: "https://github.com/user/engagement-dashboard",
-    demo: "https://engagement-dashboard-demo.com",
-  },
-  {
-    title: "Video Streaming App",
-    description:
-      "A feature-rich video streaming platform with real-time search, user authentication, and video recommendations.",
-    tech: [
-      { name: "MongoDB", image: "/icons/mongodb.svg" },
-      { name: "Express", image: "/icons/express.svg" },
-      { name: "React", image: "/icons/react.svg" },
-      { name: "Node.js", image: "/icons/nodejs.svg" },
-    ],
-    image: "/images/video-streaming.png",
-    github: "https://github.com/user/video-streaming-app",
-    demo: "https://video-streaming-demo.com",
-  },
-  
 ];
 
 export default function MyProjects() {
+  const [filter, setFilter] = useState("top3");
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // In real scenarios, you can fetch from API
     setProjects(projectsData);
   }, []);
 
+  const filteredProjects = filter === "top3" ? projects.slice(0, 3) : projects;
+
   return (
-    <div className="min-h-screen    bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800  to-gray-900 text-white p-6">
       <h1 className="text-4xl font-bold text-orange-500 text-center mb-4">
         My Projects
       </h1>
-      <p className="text-center text-gray-400 mb-10">
+      <p className="text-center text-gray-400 mb-6">
         A showcase of my full-stack projects, built using modern web
         technologies and frameworks.
       </p>
-      <div className=" w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projects.map((project, idx) => (
+
+      {/* Filter Buttons */}
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <button
+          onClick={() => setFilter("top3")}
+          className={`px-3 py-2 border rounded-full ${
+            filter === "top3"
+              ? "bg-orange-500 text-black shadow-lg"
+              : "bg-[#806b6b] border-gray-700 text-white hover:bg-gray-800"
+          }`}
+        >
+          Top 3
+        </button>
+        <button
+          onClick={() => setFilter("all")}
+          className={`px-4 py-2 border rounded-full hover:bg-[#141D2D] ${
+            filter === "all"
+              ? "bg-orange-500 text-black shadow-lg"
+              : "bg-[#806b6b] border-gray-700 text-white hover:bg-gray-800"
+          }`}
+        >
+          All
+        </button>
+      </div>
+
+      {/* Project Grid */}
+      <div className="w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-end">
+        {filteredProjects.map((project, idx) => (
           <div
             key={idx}
             className="bg-[#0f172a] rounded-2xl p-4 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border hover:border-orange-500"
@@ -72,7 +88,7 @@ export default function MyProjects() {
             <img
               src={project.image}
               alt={project.title}
-              className="rounded-xl mb-4 w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+              className="rounded-xl mb-4 w-full h-40 object-cover transition-transform duration-300 hover:scale-105"
             />
             <h2 className="text-xl font-semibold text-orange-400 mb-2">
               {project.title}
@@ -82,13 +98,9 @@ export default function MyProjects() {
               {project.tech.map((techItem, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-1 bg-orange-800 px-2 py-1 rounded text-xs"
+                  className="flex items-center gap-1 bg-gray-900 text-white px-2 py-1 rounded text-xs"
                 >
-                  <img
-                    src={techItem.image}
-                    alt={techItem.name}
-                    className="w-4 h-4"
-                  />
+                  <span>{techItem.icon}</span>
                   <span>{techItem.name}</span>
                 </div>
               ))}

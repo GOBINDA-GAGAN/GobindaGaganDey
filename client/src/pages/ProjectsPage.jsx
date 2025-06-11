@@ -78,7 +78,7 @@ export default function MyProjects() {
   const filteredProjects = filter === "top3" ? projects.slice(0, 3) : projects;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800  to-gray-900 text-white p-2 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800  to-gray-900 text-white p-6 md:p-6">
       <h1 className="text-4xl font-bold text-orange-500 text-center mb-4">
         My Projects
       </h1>
@@ -116,12 +116,12 @@ export default function MyProjects() {
         {filteredProjects.map((project, idx) => (
           <div
             key={idx}
-            className="bg-[#0f172a] rounded-2xl p-1 md:p-4 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border hover:border-orange-500"
+            className="bg-[#0f172a] rounded-2xl p-3 md:p-4 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border hover:border-orange-500"
           >
             <img
               src={project.image}
               alt={project.title}
-              className="rounded-xl mb-4 w-full h-30 md:h-40 object-cover transition-transform duration-300 hover:scale-105"
+              className="rounded-xl mb-4 w-full h-35 md:h-40 object-cover transition-transform duration-300 hover:scale-105"
             />
             <h2 className="text-xl font-semibold text-orange-400 mb-2">
               {project.title}

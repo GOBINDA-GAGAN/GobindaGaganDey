@@ -81,8 +81,8 @@ export default function AnonymousWall() {
           ref={boxRef}
           className="relative w-full h-[500px] border border-gray-700 rounded-4xl overflow-hidden p-4"
           style={{
-            backgroundImage: `url('/photorealistic-view-tree-nature-with-branches-trunk.jpg')`,
-            // backgroundImage: `url('/digital-art-dark-cosmic-night-sky.jpg')`,
+            // backgroundImage: `url('/photorealistic-view-tree-nature-with-branches-trunk.jpg')`,
+            backgroundImage: `url('/digital-art-dark-cosmic-night-sky.jpg')`,
             // backgroundImage: `url('/brown-wooden-dock.jpg')`,
             // backgroundImage: `url('/trees-evening-sunset.jpg')`,
             backgroundSize: "cover",

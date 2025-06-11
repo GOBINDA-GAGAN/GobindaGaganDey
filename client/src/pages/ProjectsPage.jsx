@@ -121,7 +121,7 @@ export default function MyProjects() {
             <img
               src={project.image}
               alt={project.title}
-              className="rounded-xl mb-4 w-full h-24 md:h-40 object-cover transition-transform duration-300 hover:scale-105"
+              className="rounded-xl mb-4 w-full h-30 md:h-40 object-cover transition-transform duration-300 hover:scale-105"
             />
             <h2 className="text-xl font-semibold text-orange-400 mb-2">
               {project.title}

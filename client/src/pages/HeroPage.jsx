@@ -171,7 +171,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center space-x-2">
             <img
-              src="/mee2.jpg"
+              src="/mee1.jpg"
               alt="profile"
               className="w-8 h-8 rounded-full object-cover"
             />
@@ -184,7 +184,7 @@ export default function HomePage() {
 
         {/* Image */}
         <motion.img
-          src="/mee2.jpg"
+          src="/mee1.jpg"
           alt="Instagram post"
           className="w-full h-[80%] object-left-top"
           transition={{ duration: 0.3 }}

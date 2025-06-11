@@ -46,7 +46,7 @@ const AboutMe = () => {
         {/* Profile Image */}
         <motion.div className="flex justify-center" variants={itemVariants}>
           <img
-            src="/mee2.jpg"
+            src="/mee3.jpg"
             alt="Gobinda Gagan"
             className="rounded-3xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg md:h-[600px] object-cover shadow-xl"
           />

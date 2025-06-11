@@ -19,29 +19,35 @@ gsap.registerPlugin(ScrollTrigger);
 
 const socialLinks = [
   {
-    icon: <FaLinkedin size={25} className="text-blue-700" />,
-    href: "https://www.linkedin.com/in/gobinda-gagan-dey/",
-  }, // LinkedIn Blue
-  {
-    icon: <FaGithub size={25} className="text-gray-100" />,
+    icon: <FaGithub size={30} className="text-gray-900" />,
     href: "https://github.com/GOBINDA-GAGAN",
+    shadowColor: "shadow-gray-400",
   },
   {
-    icon: <SiLeetcode size={25} className="text-yellow-500" />,
-    href: "https://leetcode.com/Gobinda_Gagan/",
-  }, // LeetCode Yellow // GitHub Dark Gray
+    icon: <SiLeetcode size={30} className="text-yellow-500" />,
+    href: "https://leetcode.com/u/_GobindaGagan_/",
+    shadowColor: "shadow-yellow-500/50",
+  },
   {
-    icon: <FaTwitter size={25} className="text-blue-400" />,
+    icon: <FaLinkedin size={30} className="text-blue-700" />,
+    href: "https://www.linkedin.com/in/gobinda-gagan-dey/",
+    shadowColor: "shadow-blue-700/50",
+  },
+  {
+    icon: <FaTwitter size={30} className="text-blue-400" />,
     href: "https://x.com/_GobindaGagan_",
-  }, // Twitter Blue
-  {
-    icon: <FaYoutube size={25} className="text-red-600" />,
-    href: "https://www.youtube.com/@GobindaGagan",
+    shadowColor: "shadow-blue-400/50",
   },
   {
-    icon: <FaInstagram className="text-pink-500" />,
+    icon: <FaYoutube size={30} className="text-red-600" />,
+    href: "https://www.youtube.com/@GobindaGagan",
+    shadowColor: "shadow-red-600/50",
+  },
+  {
+    icon: <FaInstagram size={30} className="text-pink-500" />,
     href: "https://www.instagram.com/gobinda_gagan_/",
-  }, // YouTube Red
+    shadowColor: "shadow-pink-500/50",
+  },
 ];
 
 export default function HomePage() {
@@ -141,7 +147,7 @@ export default function HomePage() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-400 text-2xl hover:text-white transition-colors"
+                className={`text-orange-400 text-2xl hover:text-black transition-colors p-1.5 md:p-1 bg-gray-100 rounded-xl border border-gray-200 shadow-md ${item.shadowColor}`}
                 whileHover={{ scale: 1.3, rotate: 15 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}

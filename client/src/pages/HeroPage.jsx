@@ -83,7 +83,7 @@ export default function HomePage() {
   return (
     <div
       ref={homeRef}
-      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-24 py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
+      className="md:min-h-screen flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-24 py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
     >
       {/* LEFT SECTION */}
       <motion.div

@@ -86,7 +86,7 @@ export default function AnonymousWall() {
             // backgroundImage: `url('/brown-wooden-dock.jpg')`,
             backgroundImage: `url('/trees-evening-sunset.jpg')`,
             backgroundSize: "cover",
-            backgroundPosition: "top",
+            backgroundPosition: "left",
           }}
         >
           {messages.map((msg) => (

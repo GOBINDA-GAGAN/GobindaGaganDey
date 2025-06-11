@@ -13,6 +13,7 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +25,11 @@ const socialLinks = [
   {
     icon: <FaGithub size={25} className="text-gray-100" />,
     href: "https://github.com/GOBINDA-GAGAN",
-  }, // GitHub Dark Gray
+  },
+  {
+    icon: <SiLeetcode size={25} className="text-yellow-500" />,
+    href: "https://leetcode.com/Gobinda_Gagan/",
+  }, // LeetCode Yellow // GitHub Dark Gray
   {
     icon: <FaTwitter size={25} className="text-blue-400" />,
     href: "https://x.com/_GobindaGagan_",

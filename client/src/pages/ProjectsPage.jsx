@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import project1Photo from "../assets/image/project-1_image.png";
 import project2Photo from "../assets/image/project-2_image.png";
+import algoTreeBanner from "../assets/image/algotree-banner.png";
 import { FaReact } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -11,6 +12,32 @@ import {
 import { MdApi } from "react-icons/md";
 
 const projectsData = [
+  {
+    title: "AlgoTree",
+    description:
+      "A sleek DSA dashboard built with React and Tailwind. Track coding progress, watch curated video explanations, and take personal notes — all in one place.",
+    tech: [
+      {
+        name: "React",
+        icon: <FaReact size={20} className="text-blue-400" />,
+      },
+      {
+        name: "Vite",
+        icon: <SiVite size={20} className="text-purple-400" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss size={20} className="text-cyan-400" />,
+      },
+      {
+        name: "Framer Motion",
+        icon: <SiFramer size={20} className="text-pink-400" />,
+      },
+    ],
+    image: algoTreeBanner,
+    github: "https://github.com/GOBINDA-GAGAN/AlgoTree",
+    demo: "https://algo-tree.vercel.app/",
+  },
   {
     title: "CryptoTracker",
     description:

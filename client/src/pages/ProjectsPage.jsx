@@ -8,6 +8,7 @@ import {
   SiJavascript,
   SiChartdotjs,
   SiFramer,
+  SiVite,
 } from "react-icons/si";
 import { MdApi } from "react-icons/md";
 

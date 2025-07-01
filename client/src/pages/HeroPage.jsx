@@ -108,9 +108,9 @@ export default function HomePage() {
           transition={{ delay: 0.4 }}
         >
           <p className="text-xl font-medium">
-            你好, I'm{" "}
+         Hello, I'm{" "}
             <span className="text-orange-400 text-3xl md:text-6xl ">
-              戈宾达·加甘
+             Gobinda Gagan
             </span>
           </p>
         </motion.h1>
@@ -123,8 +123,8 @@ export default function HomePage() {
         >
           <p className=" text-2xl md:text-4xl text-white mb-10">
             Real engineering is thinking about the{" "}
-            <span className="text-yellow-400 font-semibold">‘why’</span> before
-            the <span className="text-cyan-400 font-semibold">‘how’</span>.
+            <span className="text-yellow-400 font-semibold">‘‘why’’</span> before
+            the <span className="text-cyan-400 font-semibold">‘‘how’’</span>.
           </p>
         </motion>
 

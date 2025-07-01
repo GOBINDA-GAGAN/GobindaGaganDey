@@ -19,32 +19,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 const socialLinks = [
   {
-    icon: <FaGithub size={30} className="text-gray-900" />,
+    icon: <FaGithub size={25} className="text-gray-900" />,
     href: "https://github.com/GOBINDA-GAGAN",
     shadowColor: "shadow-gray-400",
   },
   {
-    icon: <SiLeetcode size={30} className="text-yellow-500" />,
+    icon: <SiLeetcode size={25} className="text-yellow-500" />,
     href: "https://leetcode.com/u/_GobindaGagan_/",
     shadowColor: "shadow-yellow-500/50",
   },
   {
-    icon: <FaLinkedin size={30} className="text-blue-700" />,
+    icon: <FaLinkedin size={25} className="text-blue-700" />,
     href: "https://www.linkedin.com/in/gobinda-gagan-dey/",
     shadowColor: "shadow-blue-700/50",
   },
   {
-    icon: <FaTwitter size={30} className="text-blue-400" />,
+    icon: <FaTwitter size={25} className="text-blue-400" />,
     href: "https://x.com/_GobindaGagan_",
     shadowColor: "shadow-blue-400/50",
   },
   {
-    icon: <FaYoutube size={30} className="text-red-600" />,
+    icon: <FaYoutube size={25} className="text-red-600" />,
     href: "https://www.youtube.com/@GobindaGagan",
     shadowColor: "shadow-red-600/50",
   },
   {
-    icon: <FaInstagram size={30} className="text-pink-500" />,
+    icon: <FaInstagram size={25} className="text-pink-500" />,
     href: "https://www.instagram.com/gobinda_gagan_/",
     shadowColor: "shadow-pink-500/50",
   },
@@ -87,13 +87,13 @@ export default function HomePage() {
     >
       {/* LEFT SECTION */}
       <motion.div
-        className="md:w-1/2 text-center md:text-left"
+        className="md:w-1/2 text-center md:text-left space-y-16"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <motion.p
-          className="text-orange-400 font-semibold mb-2 mt-2"
+          className="text-orange-400 font-semibold mb-4 mt-2"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -102,22 +102,27 @@ export default function HomePage() {
         </motion.p>
 
         <motion.h1
-          className="text-3xl md:text-5xl font-extrabold mb-4"
+          className="text-3xl md:text-5xl font-extrabold mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Hello, I'm <span className="text-gray-300">Gobinda Gagan</span>
+          <p className="text-xl font-medium">
+            你好, I'm{" "}
+            <span className="text-orange-400 text-3xl md:text-6xl ">戈宾达·加甘</span> 
+          </p>
         </motion.h1>
 
-        <motion.h2
-          className="text-2xl md:text-4xl font-bold text-orange-500 mb-6"
+        <motion
+          className="text-2xl md:text-4xl font-bold text-orange-500 mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          Crafting Seamless Web Experiences
-        </motion.h2>
+       <p className=" text-2xl md:text-4xl text-white mb-10">
+  Real engineering is thinking about the <span className="text-yellow-400 font-semibold">‘why’</span> before the <span className="text-cyan-400 font-semibold">‘how’</span>.
+</p>
+        </motion>
 
         <motion.p
           className="text-gray-400 mb-6"
@@ -125,8 +130,8 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          I'm a passionate Full Stack Developer creating fast, intuitive, and
-          responsive web applications. Let's build something impactful together.
+          I don’t just write code — I build real, fast, and impactful products
+          that people use. Let’s create something powerful together.
         </motion.p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -140,7 +145,7 @@ export default function HomePage() {
             </motion.button>
           </a>
 
-          <div className="flex space-x-4 mt-2 sm:mt-0">
+          <div className="flex justify-evenly  gap-3  mt-2  sm:mt-0">
             {socialLinks.map((item, index) => (
               <motion.a
                 key={index}

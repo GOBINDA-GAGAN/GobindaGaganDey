@@ -165,7 +165,7 @@ function DraggableCard({ message, constraintRef }) {
       }}
     >
       {message.name && (
-        <p className="font-semibold text-sm md:text-xl text-gray-100">
+        <p className="font-semibold text-sm md:text-lg text-gray-100">
           {message.name}{" "}
           <span className="text-green-500 text-sm">{message.role}</span>
         </p>

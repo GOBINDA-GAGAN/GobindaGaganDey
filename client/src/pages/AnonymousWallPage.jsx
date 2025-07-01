@@ -104,7 +104,7 @@ export default function AnonymousWall() {
             // backgroundImage: `url('/white-red-hearts.jpg')`,
             backgroundImage: `url('/two-people-love.jpg')`,
             backgroundSize: "cover",
-            backgroundPosition: "right",
+            backgroundPosition: "center",
           
             
 

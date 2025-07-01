@@ -4,12 +4,12 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-white md:py-20 py-10 px-6 text-center">
+    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white md:py-20 py-10 px-6 text-center">
       <h3 className="text-xl text-orange-400 mb-2">
         Hi, I'm Gobinda Gagan Dey
       </h3>
       <h1 className="text-4xl md:text-5xl font-bold text-orange-500 mb-4">
-        Let's Work Together!
+        Turning Ideas Into Reality !
       </h1>
       <p className="text-gray-400 mb-12 text-lg">
         Interested in collaborating, hiring, or just having a chat? Reach out to

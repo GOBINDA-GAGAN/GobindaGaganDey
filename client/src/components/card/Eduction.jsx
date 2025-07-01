@@ -58,7 +58,7 @@ export default function EducationJourney() {
       <h2 className="text-3xl md:text-5xl font-bold text-orange-400 mb-2 text-center">
         Educational Journey
       </h2>
-      <p className="text-center text-gray-400 mb-10">
+      <p className="text-center text-gray-400 mb-10 text-base">
         Hanging on experience, swinging toward innovation ✨
       </p>
 
@@ -96,7 +96,7 @@ export default function EducationJourney() {
                   {edu.highlights.map((highlight, i) => (
                     <div
                       key={i}
-                      className="inline-block bg-orange-900 text-orange-300 px-4 py-1 rounded-full text-sm"
+                      className="inline-block bg-orange-800 text-center text-orange-300 px-4 py-1 rounded-full text-sm"
                     >
                       {highlight}
                     </div>

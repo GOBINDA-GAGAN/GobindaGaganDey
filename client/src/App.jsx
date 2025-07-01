@@ -25,9 +25,9 @@ const App = () => {
         <section id="skills" className="snap-start">
           <SkillPage />
         </section>
-        <section id="mystery" className="snap-start">
+        {/* <section id="mystery" className="snap-start">
           <AnonymousWallPage />
-        </section>
+        </section> */}
         <section id="contact" className="snap-start">
           <Contact />
         </section>

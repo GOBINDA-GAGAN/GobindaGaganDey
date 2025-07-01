@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import MyInterests from "../components/AboutCard/MyInterests";
 import ProfessionalExcellence from "../components/AboutCard/ProfessionalValues";
 // import ExperienceSection from "../components/card/ExperienceSection";
 import EducationJourney from "../components/card/Eduction";
+import gsap from "gsap";
+import { FaBookmark, FaComment, FaHeart, FaShare } from "react-icons/fa";
 
 const AboutMe = () => {
   const containerVariants = {
@@ -17,11 +19,21 @@ const AboutMe = () => {
       },
     },
   };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
+
+  const [liked, setLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(362);
+
+
+  const toggleLike = () => {
+    if (liked) setLikesCount((prev) => prev - 1);
+    else setLikesCount((prev) => prev + 1);
+    setLiked(!liked);
+  };
+ 
 
   return (
     <motion.div
@@ -44,12 +56,59 @@ const AboutMe = () => {
         variants={containerVariants}
       >
         {/* Profile Image */}
-        <motion.div className="flex justify-center" variants={itemVariants}>
-          <img
-            src="/mee3.jpg"
-            alt="Gobinda Gagan"
-            className="rounded-3xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg md:h-[600px] object-cover shadow-xl"
+        <motion.div
+          className=" w-full max-w-[25rem] bg-gray-200 rounded-lg overflow-hidden shadow-xl mt-14 text-black rotate-0 md:rotate-[0deg]"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          whileHover={{ scale: 1.03 }}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between p-4">
+            <div className="flex items-center space-x-2">
+              <img
+                src="/mee1.jpg"
+                alt="profile"
+                className="w-8 h-8 rounded-full object-cover"
+              />
+              <span className="text-sm font-semibold">@gobinda_gagan_</span>
+            </div>
+            <button className="text-blue-500 text-xs font-bold border px-2 py-1 rounded">
+              FOLLOW
+            </button>
+          </div>
+
+          {/* Image */}
+          <motion.img
+            src="/mee1.jpg"
+            alt="Instagram post"
+            className="w-full h-[80%] md:max-w-md lg:max-w-lg object-left-top"
+            transition={{ duration: 0.3 }}
           />
+
+          {/* Footer Actions */}
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex space-x-4 text-gray-900 text-xl">
+                <FaHeart
+                  onClick={toggleLike}
+                  className={`cursor-pointer transition-colors duration-300 ${
+                    liked ? "text-red-500" : "text-black"
+                  }`}
+                />
+                <FaComment className="cursor-pointer hover:text-blue-500" />
+                <FaShare className="cursor-pointer hover:text-blue-500" />
+              </div>
+              <FaBookmark className="cursor-pointer hover:text-blue-500" />
+            </div>
+            <p className="text-sm text-gray-800 font-semibold">
+              {likesCount} likes
+            </p>
+            <p className="text-sm text-gray-700">
+              Alok - <span className="text-blue-500">#FullStackDev</span>{" "}
+              <span className="text-blue-500">#CreativeCoder</span>
+            </p>
+          </div>
         </motion.div>
 
         {/* Description & Interests */}
@@ -80,7 +139,7 @@ const AboutMe = () => {
         </motion.div>
       </motion.div>
       <div className="w-10/12 flex justify-center items-center">
-        <ProfessionalExcellence />
+        {/* <ProfessionalExcellence /> */}
       </div>
       <div className="w-10/12 flex justify-center items-center">
         {/* <ExperienceSection /> */}

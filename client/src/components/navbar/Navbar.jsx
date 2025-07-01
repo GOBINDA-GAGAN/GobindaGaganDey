@@ -9,7 +9,7 @@ const Navbar = () => {
     { name: "About", to: "about" },
     { name: "Projects", to: "projects" },
     { name: "Skills", to: "skills" },
-    { name: "Mystery Board ✨", to: "mystery" },
+    // { name: "Mystery Board ✨", to: "mystery" },
     { name: "Contact", to: "contact" },
   ];
 
@@ -49,7 +49,7 @@ const Navbar = () => {
         {/* Hire me button */}
         <a href="mailto:gobindagagandey@gmail.com">
             <button className="border hidden md:block border-orange-500  cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
-              <span className="cursor-pointer"> Hire me 😊</span>
+              <span className="cursor-pointer"> Contact 😊</span>
             </button>
           </a>
 
@@ -91,7 +91,7 @@ const Navbar = () => {
           ))}
           <a href="mailto:gobindagagandey@gmail.com">
             <button className="border border-orange-500 cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
-              <span className="cursor-pointer"> Hire me 😊</span>
+              <span className="cursor-pointer"> Contact 😊</span>
             </button>
           </a>
         </ul>

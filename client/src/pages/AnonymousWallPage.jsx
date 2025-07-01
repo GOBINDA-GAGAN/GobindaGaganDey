@@ -19,7 +19,7 @@ const initialMessages = [
   {
     id: 3,
     name: "Gobinda",
-    role: "Admin",
+    role: "•Admin",
     message: "Shanti rakho sab 😇",
     date: "5/24/2025",
     time: "07:00 PM",
@@ -95,14 +95,19 @@ export default function AnonymousWall() {
 
         <div
           ref={boxRef}
-          className="relative w-full h-[500px] border border-gray-700 rounded-4xl overflow-hidden p-4"
+          className="relative w-full h-[500px] border opacity-100 border-gray-700 rounded-4xl overflow-hidden p-4"
           style={{
             // backgroundImage: `url('/photorealistic-view-tree-nature-with-branches-trunk.jpg')`,
             // backgroundImage: `url('/digital-art-dark-cosmic-night-sky.jpg')`,
             // backgroundImage: `url('/brown-wooden-dock.jpg')`,
-            backgroundImage: `url('/trees-evening-sunset.jpg')`,
+            // backgroundImage: `url('/trees-evening-sunset.jpg')`,
+            // backgroundImage: `url('/white-red-hearts.jpg')`,
+            backgroundImage: `url('/two-people-love.jpg')`,
             backgroundSize: "cover",
-            backgroundPosition: "left",
+            backgroundPosition: "right",
+          
+            
+
           }}
         >
           {messages.map((msg) => (
@@ -128,13 +133,13 @@ function DraggableCard({ message, constraintRef }) {
   }, [constraintRef]);
 
   const gradientStyles = [
-    "linear-gradient(135deg, rgba(255, 100, 98, 0.3), rgba(255, 177, 104, 0.1))",
-    "linear-gradient(135deg, rgba(0, 204, 255, 0.3), rgba(146, 254, 157, 0.1))",
-    "linear-gradient(135deg, rgba(123, 104, 238, 0.3), rgba(240, 128, 128, 0.1))",
-    "linear-gradient(135deg, rgba(0, 191, 255, 0.3), rgba(135, 206, 235, 0.1))",
-    "linear-gradient(135deg, rgba(144, 238, 144, 0.3), rgba(255, 255, 240, 0.1))",
-    "linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(255, 255, 255, 0.1))",
-  ];
+  "linear-gradient(135deg, rgba(255, 100, 98, 0.5), rgba(255, 177, 104, 0.25))",
+  "linear-gradient(135deg, rgba(0, 204, 255, 0.5), rgba(146, 254, 157, 0.25))",
+  "linear-gradient(135deg, rgba(123, 104, 238, 0.5), rgba(240, 128, 128, 0.25))",
+  "linear-gradient(135deg, rgba(0, 191, 255, 0.5), rgba(135, 206, 235, 0.25))",
+  "linear-gradient(135deg, rgba(144, 238, 144, 0.5), rgba(255, 255, 240, 0.25))",
+  "linear-gradient(135deg, rgba(255, 0, 255, 0.5), rgba(255, 255, 255, 0.25))"
+]
 
   const isAdmin = message.name === "Gobinda" && message.role === "Admin";
 
@@ -160,9 +165,9 @@ function DraggableCard({ message, constraintRef }) {
       }}
     >
       {message.name && (
-        <p className="font-semibold text-xs md:text-sm text-white">
+        <p className="font-semibold text-lg md:text-sm text-gray-100">
           {message.name}{" "}
-          <span className="text-green-500 text-xs">• {message.role}</span>
+          <span className="text-green-500 text-sm">{message.role}</span>
         </p>
       )}
       <p className="mt-1 text-white text-sm md:text-base">{message.message}</p>

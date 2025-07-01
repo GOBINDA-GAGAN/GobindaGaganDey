@@ -1,33 +1,49 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiSend } from "react-icons/fi";
-
 const initialMessages = [
   {
+    id: 1,
+    name: "Rohit 😏",
+    message: "GF hai kya bhai? 👀",
+    date: "5/25/2025",
+    time: "10:00 AM",
+  },
+  {
     id: 2,
-    message: "This UI is super cool 😍",
+    name: "Aman 🤓",
+    message: "UI fire hai bro! 🔥",
     date: "5/24/2025",
     time: "08:15 PM",
   },
   {
     id: 3,
-    message: "Loving the draggable cards!",
+    name: "Gobinda",
+    role: "Admin",
+    message: "Shanti rakho sab 😇",
     date: "5/24/2025",
-    time: "02:40 PM",
+    time: "07:00 PM",
   },
   {
     id: 4,
-    name: "Gobinda",
-    role: "Admin",
-    message: "Keep your comments kind and creative! ❤️",
-    date: "5/23/2025",
-    time: "11:11 AM",
+    name: "Priya 💖",
+    message: "Text toh kiya… reply kab aayega? 😏 ",
+    date: "5/25/2025",
+    time: "12:30 PM",
   },
   {
     id: 5,
-    message: "Nice work team 👏",
-    date: "5/22/2025",
-    time: "04:04 PM",
+    name: "Priya 💖",
+    message: "Code run hua… ab mera heart kab run hoga? 💘",
+    date: "5/25/2025",
+    time: "04:15 PM",
+  },
+  {
+    id: 6,
+    name: "Priya 💖",
+    message: "Code sahi hai... tum bhi 💘",
+    date: "5/25/2025",
+    time: "04:45 PM",
   },
 ];
 

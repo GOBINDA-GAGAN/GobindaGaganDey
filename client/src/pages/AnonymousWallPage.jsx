@@ -133,19 +133,19 @@ function DraggableCard({ message, constraintRef }) {
   }, [constraintRef]);
 
   const gradientStyles = [
-  "linear-gradient(135deg, rgba(255, 100, 98, 0.5), rgba(255, 177, 104, 0.25))",
-  "linear-gradient(135deg, rgba(0, 204, 255, 0.5), rgba(146, 254, 157, 0.25))",
-  "linear-gradient(135deg, rgba(123, 104, 238, 0.5), rgba(240, 128, 128, 0.25))",
-  "linear-gradient(135deg, rgba(0, 191, 255, 0.5), rgba(135, 206, 235, 0.25))",
-  "linear-gradient(135deg, rgba(144, 238, 144, 0.5), rgba(255, 255, 240, 0.25))",
-  "linear-gradient(135deg, rgba(255, 0, 255, 0.5), rgba(255, 255, 255, 0.25))"
+  "linear-gradient(135deg, rgba(255, 100, 98, 0.3), rgba(255, 177, 104, 0.25))",
+  "linear-gradient(135deg, rgba(0, 204, 255, 0.3), rgba(146, 254, 157, 0.25))",
+  "linear-gradient(135deg, rgba(123, 104, 238, 0.3), rgba(240, 128, 128, 0.25))",
+  "linear-gradient(135deg, rgba(0, 191, 255, 0.3), rgba(135, 206, 235, 0.25))",
+  "linear-gradient(135deg, rgba(144, 238, 144, 0.3), rgba(255, 255, 240, 0.25))",
+  "linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(255, 255, 255, 0.25))"
 ]
 
   const isAdmin = message.name === "Gobinda" && message.role === "Admin";
 
   const [bgGradient] = useState(() =>
     isAdmin
-      ? "linear-gradient(135deg, rgba(255,165,0,0.3), rgba(255,255,255,0.1))"
+      ? "linear-gradient(135deg, rgba(255,165,0,0.5), rgba(255,255,255,0.1))"
       : gradientStyles[Math.floor(Math.random() * gradientStyles.length)]
   );
 
@@ -165,7 +165,7 @@ function DraggableCard({ message, constraintRef }) {
       }}
     >
       {message.name && (
-        <p className="font-semibold text-lg md:text-xl text-gray-100">
+        <p className="font-semibold text-sm md:text-xl text-gray-100">
           {message.name}{" "}
           <span className="text-green-500 text-sm">{message.role}</span>
         </p>

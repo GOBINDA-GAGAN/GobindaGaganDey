@@ -48,7 +48,7 @@ const Navbar = () => {
 
         {/* Hire me button */}
         <a href="mailto:gobindagagandey@gmail.com">
-            <button className="border hidden md:block border-orange-500 cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
+            <button className="border hidden md:block border-orange-500  cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
               <span className="cursor-pointer"> Hire me 😊</span>
             </button>
           </a>

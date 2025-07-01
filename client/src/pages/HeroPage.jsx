@@ -109,7 +109,9 @@ export default function HomePage() {
         >
           <p className="text-xl font-medium">
             你好, I'm{" "}
-            <span className="text-orange-400 text-3xl md:text-6xl ">戈宾达·加甘</span> 
+            <span className="text-orange-400 text-3xl md:text-6xl ">
+              戈宾达·加甘
+            </span>
           </p>
         </motion.h1>
 
@@ -119,9 +121,11 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-       <p className=" text-2xl md:text-4xl text-white mb-10">
-  Real engineering is thinking about the <span className="text-yellow-400 font-semibold">‘why’</span> before the <span className="text-cyan-400 font-semibold">‘how’</span>.
-</p>
+          <p className=" text-2xl md:text-4xl text-white mb-10">
+            Real engineering is thinking about the{" "}
+            <span className="text-yellow-400 font-semibold">‘why’</span> before
+            the <span className="text-cyan-400 font-semibold">‘how’</span>.
+          </p>
         </motion>
 
         <motion.p
@@ -134,7 +138,7 @@ export default function HomePage() {
           that people use. Let’s create something powerful together.
         </motion.p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4">
+        <div className="flex flex-col  sm:flex-row items-center gap-4">
           <a href="mailto:gobindagagandey@gmail.com">
             <motion.button
               className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold shadow-lg transition duration-300"

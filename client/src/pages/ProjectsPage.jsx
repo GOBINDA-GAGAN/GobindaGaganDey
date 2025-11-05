@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import project1Photo from "../assets/image/project-1_image.png";
+import project3Photo from "../assets/image/project-3_image.png";
 import project2Photo from "../assets/image/project-2_image.png";
 import algoTreeBanner from "../assets/image/algotree-banner.png";
 import { FaReact } from "react-icons/fa";
@@ -9,6 +10,7 @@ import {
   SiChartdotjs,
   SiFramer,
   SiVite,
+  SiGreensock,
 } from "react-icons/si";
 import { MdApi } from "react-icons/md";
 
@@ -88,22 +90,50 @@ const projectsData = [
         icon: <SiJavascript size={20} className="text-yellow-400" />,
       },
     ],
-    image: project2Photo,
+    image: project3Photo,
     github: null,
     private: true,
     demo: "https://gobinda-gagan-dey.vercel.app/",
   },
+  {
+  title: "Freaking Delicious",
+  description:
+    "Protein + Caffeine. Live life to the fullest with SPYLT — shatter boredom and embrace your inner kid with every deliciously smooth chug. Chug a SPYLT. Animated and engaging experience powered by GSAP.",
+  tech: [
+    {
+      name: "React (Vite)",
+      icon: <FaReact size={20} className="text-blue-400" />,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: <SiTailwindcss size={20} className="text-cyan-400" />,
+    },
+    {
+      name: "GSAP",
+      icon: <SiGreensock size={20} className="text-green-500" />,
+    },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript size={20} className="text-yellow-400" />,
+    },
+  ],
+  image: project2Photo, 
+  github: "https://github.com/GOBINDA-GAGAN/SPYLT-web",
+  private: true,
+  demo: "https://spylt-web.vercel.app/",
+}
+
 ];
 
 export default function MyProjects() {
-  const [filter, setFilter] = useState("top3");
+  const [filter, setFilter] = useState("top6");
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     setProjects(projectsData);
   }, []);
 
-  const filteredProjects = filter === "top3" ? projects.slice(0, 3) : projects;
+  const filteredProjects = filter === "top6" ? projects.slice(0, 4) : projects;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800  to-gray-900 text-white p-6 md:p-6">
@@ -116,7 +146,7 @@ export default function MyProjects() {
       </p>
 
       {/* Filter Buttons */}
-      <div className="flex items-center justify-center gap-4 mb-6">
+      {/* <div className="flex items-center justify-center gap-4 mb-6">
         <button
           onClick={() => setFilter("top3")}
           className={`px-3 py-2 border rounded-full ${
@@ -137,7 +167,7 @@ export default function MyProjects() {
         >
           All
         </button>
-      </div>
+      </div> */}
 
       {/* Project Grid */}
       <div className="md:w-10/12 w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 place-items-end">

@@ -1,36 +1,276 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
 @import "tailwindcss";
 
+/* =========================================================
+   DARK MODE
+   ========================================================= */
 
-* {
-  /* font-family: "Sour Gummy", sans-serif; */
-  font-family: "Outfit", sans-serif;
-   /* font-family: "Anek Odia", sans-serif; */
-   /* font-family: "Lavishly Yours", cursive; */
-    /* font-family: "Noto Sans JP", sans-serif; */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* =========================================================
+   THEME
+   ========================================================= */
+
+@theme {
+  /* Fonts */
+  --font-outfit: "Outfit", sans-serif;
+  --font-sour: "Sour Gummy", sans-serif;
+  --font-odia: "Anek Odia", sans-serif;
+  --font-lavishly: "Lavishly Yours", cursive;
+  --font-japanese: "Noto Sans JP", sans-serif;
+
+  /* Light */
+  --color-background: #ffffff;
+  --color-surface: #fafafa;
+  --color-surface-hover: #f2f2f2;
+
+  --color-border: #eaeaea;
+  --color-border-hover: #d4d4d4;
+
+  --color-foreground: #171717;
+  --color-secondary: #666666;
+  --color-muted: #8a8a8a;
+
+  --color-primary: #000000;
+
+  /* Dark */
+  --color-dark-background: #000000;
+  --color-dark-surface: #0a0a0a;
+  --color-dark-surface-hover: #111111;
+
+  --color-dark-border: #222222;
+  --color-dark-border-hover: #333333;
+
+  --color-dark-foreground: #ededed;
+  --color-dark-secondary: #a1a1a1;
+  --color-dark-muted: #666666;
+
+  --color-dark-primary: #ffffff;
 }
 
-/* Custom Scrollbar Styles */
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+.dark {
+  --color-background: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-hover: #111111;
+
+  --color-border: #222222;
+  --color-border-hover: #333333;
+
+  --color-foreground: #ededed;
+  --color-secondary: #a1a1a1;
+  --color-muted: #666666;
+
+  --color-primary: #ffffff;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #ffffff;
+  color-scheme: light;
+}
+
+html.dark {
+  background: #000000;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-outfit);
+  background: var(--color-background);
+  color: var(--color-foreground);
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+#root {
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-foreground);
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: #000000;
+  color: #ffffff;
+}
+
+.dark ::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a; /* dark background */
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f97316; /* Tailwind's orange-500 */
-  border-radius: 8px;
+  background: var(--color-border-hover);
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fb923c; /* orange-400 */
+  background: var(--color-secondary);
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--color-border-hover)
+    var(--color-background);
+}
+
+/* =========================================================
+   VIEW TRANSITION
+   ========================================================= */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+  animation: theme-reveal 550ms
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(
+      0 at var(--theme-x) var(--theme-y)
+    );
+  }
+
+  to {
+    clip-path: circle(
+      150vmax at var(--theme-x) var(--theme-y)
+    );
+  }
+}
+
+/* =========================================================
+   THEME COLOR TRANSITIONS
+   ========================================================= */
+
+.bg-background,
+.bg-surface,
+.bg-surface-hover,
+.text-foreground,
+.text-secondary,
+.text-muted,
+.border-border {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+:focus-visible {
+  outline: 1px solid var(--color-foreground);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   IMAGE / VIDEO
+   ========================================================= */
+
+img,
+video {
+  max-width: 100%;
+}
+
+video {
+  display: block;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }

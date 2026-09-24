@@ -1,101 +1,353 @@
 import React, { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { ChevronDown, Sun, Moon, Menu, X } from "lucide-react";
+import { motion } from "motion/react";
 import { Link } from "react-scroll";
+import { useTheme } from "../../../context/ThemeContext";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { dark, toggleTheme } = useTheme();
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [hovered, setHovered] = useState("Home");
 
   const navLinks = [
-    { name: "About", to: "about" },
+    { name: "Home", to: "hero" },
     { name: "Projects", to: "projects" },
-    { name: "Skills", to: "skills" },
-    // { name: "Mystery Board ✨", to: "mystery" },
-    { name: "Contact", to: "contact" },
+    { name: "Experience", to: "experience" },
   ];
 
+  const closeMobile = () => setMobileOpen(false);
+
   return (
-    <nav className="w-full fixed top-0 z-50 bg-black text-white shadow-md">
-      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        {/* Logo */}
-        <Link
-          to="hero"
-          smooth={true}
-          duration={500}
-          offset={-70}
-          className="cursor-pointer"
-        >
-          <h1 className="text-2xl font-bold text-orange-400">
-            Gobinda<span className="text-orange-400">.dev</span>
-          </h1>
-        </Link>
+    <nav className="fixed left-0 top-0 z-50 w-full border-b border-dashed border-border bg-background backdrop-blur-sm">
+      <div className="mx-auto w-full max-w-4xl border-x border-dashed border-border">
+        <div className="flex h-14 items-center justify-between px-5 sm:px-8 md:px-10 lg:px-12">
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 text-gray-300 font-medium">
-          {navLinks.map((link, index) => (
-            <li key={index}>
+          {/* Logo */}
+          <Link
+            to="hero"
+            smooth
+            duration={500}
+            offset={-70}
+            className="cursor-pointer font-serif text-[22px] leading-none tracking-tight text-foreground"
+          >
+            Gobinda
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden items-center gap-1 md:flex">
+
+            {/* Normal Navigation Links */}
+            {navLinks.map((link) => (
               <Link
+                key={link.name}
                 to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-70} 
-                className="cursor-pointer hover:text-white transition"
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Hire me button */}
-        <a href="mailto:gobindagagandey@gmail.com">
-            <button className="border hidden md:block border-orange-500  cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
-              <span className="cursor-pointer"> Contact 😊</span>
-            </button>
-          </a>
-
-        {/* Mobile menu toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setMenuOpen(true)}>
-            <FiMenu size={24} />
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Slide Menu */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-black text-white z-50 transform transition-transform duration-300 ease-in-out ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:hidden`}
-      >
-        <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">
-          <h1 className="text-xl font-bold text-orange-400">Gobinda.dev</h1>
-          <button onClick={() => setMenuOpen(false)}>
-            <FiX size={24} />
-          </button>
-        </div>
-
-        <ul className="flex flex-col px-6 py-4 space-y-6 font-medium text-gray-300">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <Link
-                to={link.to}
-                smooth={true}
+                smooth
                 duration={500}
                 offset={-70}
-                onClick={() => setMenuOpen(false)}
-                className="cursor-pointer hover:text-white transition"
+                onMouseEnter={() => setHovered(link.name)}
+                className="group relative flex h-14 cursor-pointer items-center px-4 text-[13px] font-normal leading-none text-secondary"
               >
-                {link.name}
+                {/* Normal Text */}
+                <span className="text-[13px] font-normal leading-none transition-opacity duration-200 group-hover:opacity-0">
+                  {link.name}
+                </span>
+
+                {/* Hover Text */}
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 overflow-hidden whitespace-nowrap">
+                  <motion.span
+                    initial={{
+                      clipPath: "inset(0 100% 0 0)",
+                    }}
+                    animate={{
+                      clipPath:
+                        hovered === link.name
+                          ? "inset(0 0% 0 0)"
+                          : "inset(0 100% 0 0)",
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="block text-[13px] font-normal leading-none text-foreground"
+                  >
+                    {link.name}
+                  </motion.span>
+                </span>
+
+                {/* Moving Dot */}
+                {hovered === link.name && (
+                  <motion.span
+                    layoutId="nav-dot"
+                    className="absolute bottom-[6px] left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-foreground"
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 30,
+                      mass: 0.5,
+                    }}
+                  />
+                )}
               </Link>
-            </li>
-          ))}
-          <a href="mailto:gobindagagandey@gmail.com">
-            <button className="border border-orange-500 cursor-pointer text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black transition">
-              <span className="cursor-pointer"> Contact 😊</span>
+            ))}
+
+            {/* More */}
+            <div
+              className="group relative"
+              onMouseEnter={() => setHovered("More")}
+            >
+              <button
+                type="button"
+                className="relative flex h-14 cursor-pointer items-center px-4 text-[13px] font-normal leading-none text-secondary"
+              >
+                {/* Normal More Text */}
+                <span className="text-[13px] font-normal leading-none transition-opacity duration-200 group-hover:opacity-0">
+                  More
+                </span>
+
+                {/* Hover More Text */}
+                <span className="absolute left-4 top-1/2 flex -translate-y-1/2 items-center overflow-hidden whitespace-nowrap">
+                  <motion.span
+                    initial={{
+                      clipPath: "inset(0 100% 0 0)",
+                    }}
+                    animate={{
+                      clipPath:
+                        hovered === "More"
+                          ? "inset(0 0% 0 0)"
+                          : "inset(0 100% 0 0)",
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="block text-[13px] font-normal leading-none text-foreground"
+                  >
+                    More
+                  </motion.span>
+
+                  {/* Arrow kept separate from text */}
+                  <ChevronDown
+                    size={12}
+                    strokeWidth={1.8}
+                    className="ml-1 shrink-0 text-foreground transition-transform duration-300 group-hover:rotate-180"
+                  />
+                </span>
+
+                {/* Moving Dot */}
+                {hovered === "More" && (
+                  <motion.span
+                    layoutId="nav-dot"
+                    className="absolute bottom-[6px] left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-foreground"
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 30,
+                      mass: 0.5,
+                    }}
+                  />
+                )}
+              </button>
+
+              {/* Dropdown */}
+              <div className="invisible absolute right-0 top-[calc(100%-1px)] w-32 translate-y-1 rounded-lg border border-border bg-background p-1 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+
+                <a
+                  href="#books"
+                  className="block rounded-md px-3 py-2 text-[13px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
+                >
+                  Books
+                </a>
+
+                <a
+                  href="#favorites"
+                  className="block rounded-md px-3 py-2 text-[13px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
+                >
+                  Favourites
+                </a>
+
+              </div>
+            </div>
+
+            {/* Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="ml-3 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-secondary transition-colors duration-200 hover:bg-surface-hover hover:text-foreground"
+            >
+              <motion.span
+                key={dark ? "sun" : "moon"}
+                initial={{
+                  opacity: 0,
+                  rotate: -45,
+                  scale: 0.7,
+                }}
+                animate={{
+                  opacity: 1,
+                  rotate: 0,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+              >
+                {dark ? (
+                  <Sun size={16} strokeWidth={1.8} />
+                ) : (
+                  <Moon size={16} strokeWidth={1.8} />
+                )}
+              </motion.span>
             </button>
-          </a>
-        </ul>
+          </div>
+
+          {/* Mobile Controls */}
+          <div className="flex items-center gap-2 md:hidden">
+
+            {/* Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="flex h-8 w-8 items-center justify-center rounded-md text-secondary transition hover:bg-surface-hover hover:text-foreground"
+            >
+              <motion.span
+                key={dark ? "sun" : "moon"}
+                initial={{
+                  opacity: 0,
+                  rotate: -45,
+                  scale: 0.7,
+                }}
+                animate={{
+                  opacity: 1,
+                  rotate: 0,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+              >
+                {dark ? (
+                  <Sun size={16} strokeWidth={1.8} />
+                ) : (
+                  <Moon size={16} strokeWidth={1.8} />
+                )}
+              </motion.span>
+            </button>
+
+            {/* Mobile Menu */}
+            <button
+              type="button"
+              onClick={() => setMobileOpen((prev) => !prev)}
+              aria-label="Toggle navigation"
+              className="flex h-8 w-8 items-center justify-center rounded-md text-secondary transition hover:bg-surface-hover hover:text-foreground"
+            >
+              {mobileOpen ? (
+                <X size={19} strokeWidth={1.8} />
+              ) : (
+                <Menu size={19} strokeWidth={1.8} />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeMobile}
+            className="fixed inset-0 -z-10 bg-black/20 backdrop-blur-[2px] md:hidden"
+          />
+
+          {/* Modal */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -8,
+              scale: 0.97,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+              y: -8,
+              scale: 0.97,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 30,
+            }}
+            className="absolute right-4 top-[58px] w-64 overflow-hidden rounded-xl border border-border bg-background shadow-2xl md:hidden"
+          >
+            <div className="p-2">
+
+              {/* Home */}
+              <Link
+                to="hero"
+                smooth
+                duration={500}
+                offset={-70}
+                onClick={closeMobile}
+                className="block rounded-lg px-4 py-3 text-[14px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
+              >
+                Home
+              </Link>
+
+              {/* Projects */}
+              <Link
+                to="projects"
+                smooth
+                duration={500}
+                offset={-70}
+                onClick={closeMobile}
+                className="block rounded-lg px-4 py-3 text-[14px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
+              >
+                Projects
+              </Link>
+
+              {/* Experience */}
+              <Link
+                to="experience"
+                smooth
+                duration={500}
+                offset={-70}
+                onClick={closeMobile}
+                className="block rounded-lg px-4 py-3 text-[14px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
+              >
+                Experience
+              </Link>
+
+              {/* Books */}
+              <a
+                href="#books"
+                onClick={closeMobile}
+                className="block rounded-lg px-4 py-3 text-[14px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
+              >
+                Books
+              </a>
+
+              {/* Favourites */}
+              <a
+                href="#favorites"
+                onClick={closeMobile}
+                className="block rounded-lg px-4 py-3 text-[14px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
+              >
+                Favourites
+              </a>
+
+            </div>
+          </motion.div>
+        </>
+      )}
     </nav>
   );
 };

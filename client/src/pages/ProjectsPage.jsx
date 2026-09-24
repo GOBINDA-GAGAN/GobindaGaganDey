@@ -1,229 +1,104 @@
-import React, { useState, useEffect } from "react";
-import project1Photo from "../assets/image/project-1_image.png";
-import project3Photo from "../assets/image/project-3_image.png";
-import project2Photo from "../assets/image/project-2_image.png";
-import algoTreeBanner from "../assets/image/algotree-banner.png";
-import { FaReact } from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiJavascript,
-  SiChartdotjs,
-  SiFramer,
-  SiVite,
-  SiGreensock,
-} from "react-icons/si";
-import { MdApi } from "react-icons/md";
+import React from "react";
+import { FiArrowLeft } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 
-const projectsData = [
-  {
-    title: "AlgoTree",
-    description:
-      "A sleek DSA dashboard built with React and Tailwind. Track coding progress, watch curated video explanations, and take personal notes — all in one place.",
-    tech: [
-      {
-        name: "React",
-        icon: <FaReact size={20} className="text-blue-400" />,
-      },
-      {
-        name: "Vite",
-        icon: <SiVite size={20} className="text-purple-400" />,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: <SiTailwindcss size={20} className="text-cyan-400" />,
-      },
-      {
-        name: "Framer Motion",
-        icon: <SiFramer size={20} className="text-pink-400" />,
-      },
-    ],
-    image: algoTreeBanner,
-    github: "https://github.com/GOBINDA-GAGAN/AlgoTree",
-    demo: "https://algo-tree.vercel.app/",
-  },
-  {
-    title: "CryptoTracker",
-    description:
-      "A responsive React app that fetches real-time cryptocurrency data using public APIs. Includes price charts with Chart.js, dark mode, search functionality.",
-    tech: [
-      { name: "React", icon: <FaReact size={20} className="text-blue-400" /> },
-      {
-        name: "Tailwind CSS",
-        icon: <SiTailwindcss size={20} className="text-cyan-400" />,
-      },
-      {
-        name: "JavaScript",
-        icon: <SiJavascript size={20} className="text-yellow-400" />,
-      },
-      {
-        name: "Chart.js",
-        icon: <SiChartdotjs size={20} className="text-pink-500" />,
-      },
-      {
-        name: "REST API",
-        icon: <MdApi size={20} className="text-green-400" />,
-      },
-    ],
-    image: project1Photo,
-    github: "https://github.com/GOBINDA-GAGAN/CryptoDashboard.git",
-    demo: "https://crypto-dashboard-gold-delta.vercel.app/",
-  },
-  {
-    title: "My Portfolio",
-    description:
-      "Interactive, animated, responsive portfolio showcasing projects and skills using React, Tailwind CSS, and Framer Motion.",
-    tech: [
-      {
-        name: "React (Vite)",
-        icon: <FaReact size={20} className="text-blue-400" />,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: <SiTailwindcss size={20} className="text-cyan-400" />,
-      },
-      {
-        name: "Framer Motion",
-        icon: <SiFramer size={20} className="text-pink-500" />,
-      },
-      {
-        name: "JavaScript",
-        icon: <SiJavascript size={20} className="text-yellow-400" />,
-      },
-    ],
-    image: project3Photo,
-    github: null,
-    private: true,
-    demo: "https://gobinda-gagan-dey.vercel.app/",
-  },
-  {
-  title: "Freaking Delicious",
-  description:
-    "Protein + Caffeine. Live life to the fullest with SPYLT — shatter boredom and embrace your inner kid with every deliciously smooth chug. Chug a SPYLT. Animated and engaging experience powered by GSAP.",
-  tech: [
-    {
-      name: "React (Vite)",
-      icon: <FaReact size={20} className="text-blue-400" />,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: <SiTailwindcss size={20} className="text-cyan-400" />,
-    },
-    {
-      name: "GSAP",
-      icon: <SiGreensock size={20} className="text-green-500" />,
-    },
-    {
-      name: "JavaScript",
-      icon: <SiJavascript size={20} className="text-yellow-400" />,
-    },
-  ],
-  image: project2Photo, 
-  github: "https://github.com/GOBINDA-GAGAN/SPYLT-web",
-  private: true,
-  demo: "https://spylt-web.vercel.app/",
-}
+import { projects } from "../../data/projects.js";
+import ProjectCard from "../components/projects/ProjectCard";
 
-];
-
-export default function MyProjects() {
-  const [filter, setFilter] = useState("top6");
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    setProjects(projectsData);
-  }, []);
-
-  const filteredProjects = filter === "top6" ? projects.slice(0, 4) : projects;
-
+const ProjectsPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800  to-gray-900 text-white p-6 md:p-6">
-      <h1 className="text-4xl font-bold text-orange-500 text-center mb-4">
-        My Projects
-      </h1>
-      <p className="text-center text-gray-400 mb-6">
-        A showcase of my full-stack projects, built using modern web
-        technologies and frameworks.
-      </p>
+    <div className="min-h-screen bg-background text-primary">
 
-      {/* Filter Buttons */}
-      {/* <div className="flex items-center justify-center gap-4 mb-6">
-        <button
-          onClick={() => setFilter("top3")}
-          className={`px-3 py-2 border rounded-full ${
-            filter === "top3"
-              ? "bg-orange-500 text-black shadow-lg"
-              : "bg-[#806b6b] text-white hover:bg-gray-800"
-          }`}
-        >
-          Top 3
-        </button>
-        <button
-          onClick={() => setFilter("all")}
-          className={`px-4 py-2 border rounded-full hover:bg-[#141D2D] ${
-            filter === "all"
-              ? "bg-orange-500 text-white shadow-lg"
-              : "bg-[#806b6b]  text-white hover:bg-gray-800"
-          }`}
-        >
-          All
-        </button>
-      </div> */}
+      {/* Top */}
+      <header className="border-b border-dashed border-border">
+        <div className="mx-auto flex max-w-4xl items-center justify-between border-x border-dashed border-border px-5 py-5 sm:px-8 md:px-10">
 
-      {/* Project Grid */}
-      <div className="md:w-10/12 w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 place-items-end">
-        {filteredProjects.map((project, idx) => (
-          <div
-            key={idx}
-            className="bg-[#0f172a] rounded-2xl p-3 md:p-4 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border hover:border-orange-500"
+          <Link
+            to="/"
+            className="
+              group
+              flex
+              items-center
+              gap-2
+              text-[12px]
+              text-secondary
+              transition-colors
+              hover:text-primary
+            "
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="rounded-xl mb-4 w-full h-35 md:h-40 object-cover transition-transform duration-300 hover:scale-105"
-            />
-            <h2 className="text-xl font-semibold text-orange-400 mb-2">
-              {project.title}
-            </h2>
-            <p className="text-gray-300 mb-4 text-sm">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((techItem, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-1 bg-gray-900 text-white px-2 py-1 rounded text-xs"
-                >
-                  <span>{techItem.icon}</span>
-                  <span>{techItem.name}</span>
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-between">
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-orange-700 px-4 py-2 rounded hover:bg-orange-600 text-sm transition-colors duration-300"
-              >
-                Live Demo
-              </a>
+            <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
 
-              {project.github ? (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 px-4 py-2 rounded hover:bg-gray-700 text-sm transition-colors duration-300"
-                >
-                  GitHub
-                </a>
-              ) : (
-                <span className="bg-gray-600 px-4 py-2 rounded text-sm text-white opacity-70 cursor-not-allowed">
-                  Private Repo
-                </span>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+            Back
+          </Link>
+
+          <span className="text-[10px] uppercase tracking-[0.25em] text-muted">
+            {projects.length} Projects
+          </span>
+
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-4xl border-x border-dashed border-border">
+
+        {/* Page Heading */}
+        <section className="border-b border-dashed border-border px-5 py-12 sm:px-8 md:px-10 md:py-16">
+
+          <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-muted">
+            Selected work
+          </p>
+
+          <h1 className="font-serif text-[42px] leading-none tracking-[-0.04em] sm:text-[52px]">
+            Projects
+          </h1>
+
+          <p className="mt-4 max-w-lg text-[14px] leading-6 text-secondary">
+            A collection of products, experiments, developer tools, and
+            interfaces built while exploring different areas of software
+            engineering.
+          </p>
+
+        </section>
+
+        {/* All Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+            />
+          ))}
+        </div>
+
+        {/* Bottom */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex justify-center border-t border-dashed border-border px-5 py-10"
+        >
+          <Link
+            to="/"
+            className="
+              group
+              flex
+              items-center
+              gap-2
+              text-[12px]
+              text-secondary
+              transition-colors
+              hover:text-primary
+            "
+          >
+            <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
+            Back to portfolio
+          </Link>
+        </motion.div>
+
+      </main>
     </div>
   );
-}
+};
+
+export default ProjectsPage;

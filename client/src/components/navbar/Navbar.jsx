@@ -22,7 +22,6 @@ const Navbar = () => {
     <nav className="fixed left-0 top-0 z-50 w-full border-b border-dashed border-border bg-background backdrop-blur-sm">
       <div className="mx-auto w-full max-w-4xl border-x border-dashed border-border">
         <div className="flex h-14 items-center justify-between px-5 sm:px-8 md:px-10 lg:px-12">
-
           {/* Logo */}
           <Link
             to="hero"
@@ -36,7 +35,6 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-1 md:flex">
-
             {/* Normal Navigation Links */}
             {navLinks.map((link) => (
               <Link
@@ -151,7 +149,6 @@ const Navbar = () => {
 
               {/* Dropdown */}
               <div className="invisible absolute right-0 top-[calc(100%-1px)] w-32 translate-y-1 rounded-lg border border-border bg-background p-1 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-
                 <a
                   href="#books"
                   className="block rounded-md px-3 py-2 text-[13px] font-normal leading-none text-secondary transition-colors hover:bg-surface-hover hover:text-foreground"
@@ -165,7 +162,6 @@ const Navbar = () => {
                 >
                   Favourites
                 </a>
-
               </div>
             </div>
 
@@ -203,7 +199,6 @@ const Navbar = () => {
 
           {/* Mobile Controls */}
           <div className="flex items-center gap-2 md:hidden">
-
             {/* Theme Toggle */}
             <button
               type="button"
@@ -289,7 +284,6 @@ const Navbar = () => {
             className="absolute right-4 top-[58px] w-64 overflow-hidden rounded-xl border border-border bg-background shadow-2xl md:hidden"
           >
             <div className="p-2">
-
               {/* Home */}
               <Link
                 to="hero"
@@ -343,7 +337,6 @@ const Navbar = () => {
               >
                 Favourites
               </a>
-
             </div>
           </motion.div>
         </>

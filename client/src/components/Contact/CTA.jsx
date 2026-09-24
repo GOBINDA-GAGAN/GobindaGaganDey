@@ -27,11 +27,11 @@ const ScrolledTooFar = () => {
               inline-flex items-center justify-center
               gap-2
               rounded-full
-              bg-primary
+              bg-blend-color
               px-7 py-3
               text-[13px]
               font-semibold
-              text-background
+              text-primary
               shadow-[0_8px_25px_rgba(0,0,0,0.15)]
               transition-all
               duration-300

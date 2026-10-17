@@ -156,13 +156,13 @@ const Navbar = () => {
             >
               <button
                 type="button"
-                className="relative flex h-14 items-center px-4 text-[13px] text-secondary"
+                className="relative flex h-14 items-center px-4  text-secondary"
               >
-                <span className="transition-opacity duration-200 group-hover:opacity-0">
+                <span className=" text-[13px] transition-opacity duration-200 group-hover:opacity-0">
                   More
                 </span>
 
-                <span className="absolute left-4 top-1/2 flex -translate-y-1/2 items-center whitespace-nowrap">
+                <span className="absolute left-4 top-1/2 flex -translate-y-1/2 text-[13px]  items-center whitespace-nowrap">
                   <motion.span
                     initial={{ clipPath: "inset(0 100% 0 0)" }}
                     animate={{
@@ -175,7 +175,7 @@ const Navbar = () => {
                       duration: 0.3,
                       ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="text-foreground"
+                    className="text-foreground font-sm"
                   >
                     More
                   </motion.span>

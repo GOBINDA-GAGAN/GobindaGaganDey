@@ -11,8 +11,8 @@ const Experience = () => {
     {
       company: "Vanurtech Media Pvt. Ltd.",
       role: "Full Stack Developer Intern",
-      duration: "3 Months",
-      period: "May 2025 — July 2025",
+      duration: "6 Months",
+      period: "February 2026 — August 2026",
       location: "Bhubaneswar, Odisha",
       type: "Internship",
       team: "Team Lead",

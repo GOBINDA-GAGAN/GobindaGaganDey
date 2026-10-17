@@ -4,26 +4,26 @@ import { motion } from "motion/react";
 const about = {
   title: "About",
   points: [
-    {
-      text: "I'm a Computer Science engineer who enjoys turning ideas into useful, well-crafted digital products.",
-      highlight: "Computer Science engineer",
-    },
-    {
-      text: "I build frontend, backend, and full-stack applications while continuously improving my engineering fundamentals.",
-      highlight: "frontend, backend, and full-stack applications",
-    },
-    {
-      text: "I care about clean code, thoughtful interfaces, performance, and learning by building.",
-      highlight: "clean code, thoughtful interfaces",
-    },
-    {
-      text: "I enjoy solving challenging problems, exploring new technologies, and turning complex ideas into simple solutions.",
-      highlight: "solving challenging problems",
-    },
-    {
-      text: "Outside coding, I focus on continuous growth, building meaningful projects, and preparing for the next stage of my career.",
-      highlight: "continuous growth",
-    },
+     {
+    text: "I'm a Software Developer with 6 months of internship experience building full-stack and AI-powered applications.",
+    highlight: "Software Developer",
+  },
+  {
+    text: "I build frontend and backend applications using React.js, Node.js, TypeScript, and MongoDB to solve real-world problems.",
+    highlight: "React.js, Node.js, TypeScript, and MongoDB",
+  },
+  {
+    text: "I develop REST APIs and AI-powered features with a focus on clean code, performance, and scalable software solutions.",
+    highlight: "REST APIs and AI-powered features",
+  },
+  {
+    text: "I enjoy solving challenging problems and strengthening my fundamentals in data structures, algorithms, and software engineering.",
+    highlight: "data structures, algorithms, and software engineering",
+  },
+  {
+    text: "I'm committed to continuous learning, building meaningful projects, and growing as a software engineer.",
+    highlight: "continuous learning",
+  },
   ],
 };
 

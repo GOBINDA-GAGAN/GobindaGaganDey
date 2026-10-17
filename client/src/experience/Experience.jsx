@@ -62,7 +62,7 @@ const Experience = () => {
           </h2>
 
           <span className="text-[8px] uppercase tracking-[0.18em] text-muted">
-            3 Months
+            6 Months
           </span>
         </div>
 

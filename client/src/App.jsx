@@ -13,6 +13,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import Skill from "./components/skills/Skill";
 import Experience from "./experience/Experience";
 import ScrolledTooFar from "./components/Contact/CTA";
+import ResumePage from "./pages/ResumePage";
 
 const Section = ({ children, className = "", id }) => {
   return (
@@ -92,6 +93,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
 
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/resume/gobindagagandey" element={<ResumePage />} />
       </Routes>
 
       {/* Footer appears on EVERY PAGE */}

@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   FiMail,
@@ -10,41 +11,42 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const contacts = [
     {
       name: "GitHub",
       icon: <FaGithub />,
-      href: "https://github.com/",
+      href: "https://github.com/GOBINDA-GAGAN",
       iconColor: "text-primary",
       hoverColor: "group-hover:text-purple-500",
     },
     {
       name: "LinkedIn",
       icon: <FaLinkedin />,
-      href: "https://linkedin.com/",
+      href: "https://www.linkedin.com/in/gobinda-gagan-dey/",
       iconColor: "text-[#0A66C2]",
       hoverColor: "group-hover:text-[#0A66C2]",
     },
     {
       name: "Twitter",
       icon: <FaXTwitter />,
-      href: "https://x.com/",
+      href: "https://x.com/GobindaGaganDey",
       iconColor: "text-primary",
       hoverColor: "group-hover:text-sky-400",
     },
     {
       name: "Mail",
       icon: <FiMail />,
-      href: "mailto:your@email.com",
+      href: "mailto:gobindagagandey@gmail.com",
       iconColor: "text-rose-400",
       hoverColor: "group-hover:text-rose-400",
     },
     {
       name: "Resume",
       icon: <FiPaperclip />,
-      href: "/resume.pdf",
+      href: "/resume/gobindagagandey",
       iconColor: "text-emerald-400",
       hoverColor: "group-hover:text-emerald-400",
     },
@@ -56,7 +58,6 @@ const Contact = () => {
       className="w-full border-t border-dashed border-border bg-background"
     >
       <div className="mx-auto max-w-4xl border-x border-dashed border-border">
-
         {/* Header */}
         <div className="border-b border-dashed border-border px-5 py-4 sm:px-8 md:px-10">
           <motion.h2
@@ -71,115 +72,92 @@ const Contact = () => {
         </div>
 
         {/* Contact Links */}
-        <div className="flex w-full items-center justify-around">
+        <div className="flex w-full items-center justify-around px-2">
+          {contacts.map((contact, index) => {
+            const isResume = contact.name === "Resume";
+            const isMail = contact.name === "Mail";
 
-          {contacts.map((contact, index) => (
-            <motion.a
-              key={contact.name}
-              href={contact.href}
-              target={contact.name === "Mail" ? undefined : "_blank"}
-              rel={
-                contact.name === "Mail"
-                  ? undefined
-                  : "noopener noreferrer"
-              }
-              aria-label={contact.name}
-              title={contact.name}
-              initial={{
-                opacity: 0,
-                y: 6,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{ once: true }}
-              transition={{
+            const content = (
+              <>
+                {/* Icon */}
+                <motion.span
+                  whileHover={{ scale: 1.08, rotate: -4 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 18,
+                  }}
+                  className={`
+                    flex h-9 w-9 shrink-0 items-center justify-center
+                    rounded-[9px] border border-border bg-surface
+                    text-[17px] transition-all duration-300
+                    group-hover:border-border-hover
+                    ${contact.iconColor}
+                  `}
+                >
+                  {contact.icon}
+                </motion.span>
+
+                {/* Desktop Name */}
+                <span className="ml-2.5 hidden text-[13px] font-medium text-primary sm:inline">
+                  {contact.name}
+                </span>
+
+                {/* Desktop Arrow */}
+                <FiArrowUpRight
+                  className="
+                    ml-1.5 hidden h-[13px] w-[13px] text-muted
+                    transition-all duration-300
+                    group-hover:-translate-y-0.5
+                    group-hover:translate-x-0.5
+                    group-hover:text-current sm:block
+                  "
+                />
+              </>
+            );
+
+            const commonProps = {
+              initial: { opacity: 0, y: 6 },
+              whileInView: { opacity: 1, y: 0 },
+              viewport: { once: true },
+              transition: {
                 duration: 0.3,
                 delay: index * 0.05,
-              }}
-              whileHover={{
-                y: -2,
-              }}
-              whileTap={{
-                scale: 0.92,
-              }}
-              className={`
-                group
-                flex
-                h-[58px]
-                items-center
-                justify-center
-                text-primary
-                transition-colors
-                duration-300
+              },
+              whileHover: { y: -2 },
+              whileTap: { scale: 0.92 },
+              className: `
+                group flex h-[58px] min-w-0 items-center justify-center
+                text-primary transition-colors duration-300
                 ${contact.hoverColor}
-              `}
-            >
-              {/* Icon */}
-              <motion.span
-                whileHover={{
-                  scale: 1.08,
-                  rotate: -4,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 18,
-                }}
-                className={`
-                  flex
-                  h-9
-                  w-9
-                  items-center
-                  justify-center
-                  rounded-[9px]
-                  border
-                  border-border
-                  bg-surface
-                  text-[17px]
-                  transition-all
-                  duration-300
-                  group-hover:border-border-hover
-                  ${contact.iconColor}
-                `}
+              `,
+            };
+
+            return isResume ? (
+              <motion.div key={contact.name} {...commonProps}>
+                <Link
+                  to={contact.href}
+                  aria-label={contact.name}
+                  title={contact.name}
+                  className="flex items-center justify-center"
+                >
+                  {content}
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.a
+                key={contact.name}
+                {...commonProps}
+                href={contact.href}
+                target={isMail ? undefined : "_blank"}
+                rel={isMail ? undefined : "noopener noreferrer"}
+                aria-label={contact.name}
+                title={contact.name}
               >
-                {contact.icon}
-              </motion.span>
-
-              {/* Desktop Name */}
-              <span
-                className="
-                  ml-2.5
-                  hidden
-                  text-[13px]
-                  font-medium
-                  text-primary
-                  sm:inline
-                "
-              >
-                {contact.name}
-              </span>
-
-              {/* Desktop Arrow */}
-              <FiArrowUpRight
-                className="
-                  ml-1.5
-                  hidden
-                  h-[13px]
-                  w-[13px]
-                  text-muted
-                  transition-all
-                  duration-300
-                  group-hover:-translate-y-0.5
-                  group-hover:translate-x-0.5
-                  group-hover:text-current
-                  sm:block
-                "
-              />
-            </motion.a>
-          ))}
-
+                {content}
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </section>

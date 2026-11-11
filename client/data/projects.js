@@ -25,18 +25,19 @@ export const projects = [
 
   {
     id: 2,
-    title: "QueryLab",
+    title: "Linkora",
     status: "Live",
-    shortDescription: "A visual playground for SQL practice.",
+    shortDescription: "One link for everything you share.",
     description:
-      "An interactive SQL learning environment where developers can write queries, explore datasets, and understand database concepts through hands-on practice.",
-    technologies: ["React", "PostgreSQL", "Express"],
-    category: "Developer Tool",
+      "A Linktree-inspired profile management platform where users can create multiple personalized pages, customize their profiles, and share all their important links through a single unique URL.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    category: "SaaS Platform",
     year: "2026",
-    image: null,
-    gradient: "from-cyan-500/20 via-blue-500/10 to-indigo-500/20",
+    image:
+      "https://github.com/user-attachments/assets/6cb9007d-84c9-4e0a-95d5-f3c085f804f9",
+    gradient: "from-[#171717]/30 via-[#7165ff]/20 to-[#c6ff35]/20",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/GOBINDA-GAGAN/LINKORA",
     featured: true,
   },
 
